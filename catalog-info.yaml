@@ -1,0 +1,22 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: kaz2joosm-go-gitops
+  description: This is GitOps manifest for kaz2joosm-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: kaz2joosm-go
+    backstage.io/kubernetes-id: kaz2joosm-go 
+    backstage.io/techdocs-ref: dir:.
+    jenkins.io/job-full-name: kaz2joosm-go-gitops 
+    github.com/project-slug: rhtap-test-organization-jk/kaz2joosm-go-gitops 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:kaz2joosm-go
